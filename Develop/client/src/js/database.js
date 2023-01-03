@@ -14,7 +14,7 @@ const initdb = async () =>
 
 
 // GET FUNCTION
-export const getDb = async (content) => {
+export const getDb = async () => {
   console.log('Getting data from the jateDB');
   //connect to the DB and version we want to use
   const jateDB = await openDB('jate', 1);
