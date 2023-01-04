@@ -30,7 +30,7 @@ export const getDb = async () => {
 };
 
 // PUT FUNCTION
-export const putDb = async (id, value) => {
+export const putDb = async (content) => {
   console.log('Put request to update the jateDB');
   // connect to DB and version we want to use
   const jateDB = await openDB('jate',1);
@@ -39,7 +39,7 @@ export const putDb = async (id, value) => {
   // open the object store
   const objStore = tx.objectStore('jate');
   // use the .add() method to pass in content
-  const req = objStore.put({id: id, value: value })
+  const req = objStore.put({id: id, value: content })
   // confirm the data was added
   const res = await req;
   console.log('data saved to the jateDB', res);

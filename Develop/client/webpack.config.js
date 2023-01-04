@@ -11,7 +11,7 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: '.src/js/install.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -26,7 +26,7 @@ module.exports = () => {
       // service worker
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'src-sw.js'
+        swDest: 'src-sw.js',
       }),
 
       //manifest.json
@@ -42,7 +42,7 @@ module.exports = () => {
         publicPath: '/',
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
+            src: path.resolve('Develop/client/src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           }
@@ -53,21 +53,26 @@ module.exports = () => {
     module: {
       // add css loaders and babel to webpack
       rules: [
+
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: "asset/resource",
+        },
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
         {
           test: /\.m?js$/,
-          exclude: /node_modules/,
+          exclude: /(node_modules|bower_components)/,
           use: {
             loader: 'babel-loader',
             options: {
-              present: ['@babel/preset-env'],
+              presets: ['@babel/preset-env'],
               plugins: ['@babel/plugin-proposal-object-spread', '@babel/transform-runtime']
             }
           }
-        }
+        },
       ],
     },
   };
