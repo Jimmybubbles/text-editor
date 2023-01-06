@@ -15,4 +15,20 @@ I WANT to create notes or code snippets with or without an internet connection
 SO THAT I can reliably retrieve them for late
 ```
 
-## Mock-up
+
+## Screenshot
+
+
+![jate](https://user-images.githubusercontent.com/110278837/210947317-9a206110-30cc-4860-a27d-a11ad0d3ca2d.png)
+
+
+
+## Core Technologies Used
+
+![JavaScript Badge](https://img.shields.io/badge/Language-JavaScript-yellow)
+![CSS Badge](https://img.shields.io/badge/Language-CSS-blue)
+![Node.js Badge](https://img.shields.io/badge/Environment-Node.js-green)
+![IndexedDB Badge](https://img.shields.io/badge/Database-IndexedDB-informational)
+![idb Badge](https://img.shields.io/badge/NPM-idb-red)
+![Express Badge](https://img.shields.io/badge/NPM-Express.js-yellowgreen)
+![heroku Badge](https://img.shields.io/badge/Deployment-heroku-blueviolet)
