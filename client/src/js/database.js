@@ -19,14 +19,14 @@ export const getDb = async () => {
   //connect to the DB and version we want to use
   const jateDB = await openDB('jate', 1);
   // make new transaction...need to specify the DB we are posting to and the data privileges.
-  const tx = jateDB.transaction('jate', 'readwrite');
+  const tx = jateDB.transaction('jate', 'readonly');
   // open the object store
   const objStore = tx.objectStore('jate');
   // use the .getAll() method to grab all the content in the DB
   const req = objStore.getAll()
   // confirm the data was fetched
   const res = await req;
-  console.log('data saved to the jateDB', res) 
+  console.log('data saved to the jateDB', res.value) 
 };
 
 // PUT FUNCTION
@@ -39,10 +39,10 @@ export const putDb = async (content) => {
   // open the object store
   const objStore = tx.objectStore('jate');
   // use the .add() method to pass in content
-  const req = objStore.put({id: id, value: content })
+  const req = objStore.put({id: 1, value: content })
   // confirm the data was added
   const res = await req;
-  console.log('data saved to the jateDB', res);
+  console.log('data saved to the jateDB', res.value);
 };
 
 
