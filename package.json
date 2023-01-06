@@ -28,6 +28,7 @@
     "concurrently": "^5.2.0",
     "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.4",
-    "webpack-pwa-manifest": "^4.3.0"
+    "webpack-pwa-manifest": "^4.3.0",
+    "workbox-webpack-plugin": "^6.2.4"
   }
 }
